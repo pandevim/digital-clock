@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Clock</title>
+
+	<meta charset="utf-8"/>
+	<meta name="Description" content="A clock made from HTML and Javascript"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+	<script src="main.js" async defer></script>
+
+</head>
+<body>
+	<div class="background-image"></div>
+	<main>
+		<section class="date">
+			<div class="text"><span id="date"><!-- date --></span></div>
+		</section>
+		<section class="clock">
+			<article class="digital">
+				<div class="weeks">
+					<div class="day"><span id="Mon" class="normal">MON</span></div>
+					<div class="day"><span id="Tue" class="normal">TUE</span></div>
+					<div class="day"><span id="Wed" class="normal">WED</span></div>
+					<div class="day"><span id="Thu" class="normal">THU</span></div>
+					<div class="day"><span id="Fri" class="normal">FRI</span></div>
+					<div class="day"><span id="Sat" class="normal">SAT</span></div>
+					<div class="day"><span id="Sun" class="normal">SUN</span></div>
+				</div>
+				<div class="time">
+					<div class="blank"></div>
+					<div class="digits"><span id="digits">00:00</span></div>
+					<div class="meridiem"><span id="meridiem"><!-- meridiem --></span></div>
+				</div>
+			</article>
+			<article class="timer">
+				<div class="scale">
+					<img src="img/scale.png" />
+				</div>
+				<div class="progress">
+					<progress id="progress" max="60" value="0"></progress>
+				</div>
+			</article>
+		</section>
+	</main>
+	<footer>
+		<div class="music_info">
+			<span id="singer">Wanda Jackson</span>
+			<span id="music">· Let's Have a Party</span>
+		</div>
+		<div class="music_controls">
+			<audio controls>
+			  <source src="music/party.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+	</footer>
+</body>
+</html>

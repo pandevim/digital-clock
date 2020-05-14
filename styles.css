@@ -1,0 +1,258 @@
+
+
+/* || GLOBAL VALUES */
+
+@charset "utf-8";
+
+@font-face {
+	font-family: 'Digital-7';
+	src: url('fonts/digital/Digital-7.ttf.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Carlito Regular';
+	src: url('fonts/carlito/Carlito-Regular.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+}
+
+:root {
+	
+	--main-font: 'Carlito Regular';
+	--digit-font: 'Digital-7';
+
+	--primary-color: 240, 240, 240; /* #F3F3F3 */
+	--secondry-color: #454B4D;
+	--tertiary-color: #303030;
+
+	--main-color: #F1F1F1;
+
+}
+
+/* || GENERAL STYLES */
+
+* {
+	box-sizing: border-box;
+	font-family: var(--main-font);
+	z-index: 1;
+}
+
+html, body {
+	margin: 0 auto;
+	height: 100%;
+}
+
+/* || LAYOUT STYLES */
+
+
+body {
+	display: grid;
+	grid-gap: 15px;
+	grid-template-columns: repeat(13, 1fr);
+	grid-template-rows: repeat(12, 1fr);
+}
+
+div.background-image {
+	grid-row: 1 / 13;
+	grid-column: 1 / 14;
+	z-index: 0;
+	background-image: url('img/background.png');
+	height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+	grid-row: 2 / span 8;
+	grid-column: 3 / span 9;
+}
+
+footer {
+	grid-row: 10 / span 2;
+	grid-column: 3 / span 9;
+	background-color: var(--tertiary-color);
+	opacity: 0.7;
+}
+
+/* || MAIN STYLES */
+
+main {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+section.date {
+	flex: initial;
+	color: rgba(var(--primary-color), 1);
+}
+
+section.clock {
+	flex: auto;
+	background-color: rgba(var(--primary-color), 0.9);
+}
+
+/* || CLOCK STYLES */
+
+section.clock {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+}
+
+article.digital {
+	grid-row: 2 / span 4;
+	grid-column: 2 / span 10;
+	background-color: var(--main-color);
+	border-radius: 20px;
+	box-shadow: inset 0 0 20px #c8c1c1;
+}
+
+/* || DIGITAL STYLES */
+
+article.digital {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+div.weeks {
+	flex: 40%;
+}
+
+div.time {
+	flex: 60%;
+}
+
+.digits > span {
+	font-family: var(--digit-font);
+}
+
+/* || WEEKS STYLES */
+
+div.weeks {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+div.day {
+	flex: auto;
+	text-align: center;
+}
+
+div.day > span {
+	font-size: 25px;
+}
+
+span.normal {
+	color: #B1B1B1;
+}
+
+span.focus {
+	color: var(--secondry-color);
+	font-weight: bold;
+}
+
+/* || TIME STYLES */
+
+div.time {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+
+div.blank {
+	flex: auto;
+}
+
+div.digits {
+	flex: auto;
+	font-size: 190px;
+	color: var(--secondry-color);
+	text-align: center;
+	line-height: 100px;
+}
+
+div.meridiem {
+	flex: auto;
+	font-size: 30px;
+}
+
+.meridiem {
+	color: var(--secondry-color);
+}
+
+/* || TIMER STYLES */
+
+article.timer {
+	grid-row: 6;
+	grid-column: 2 / span 10;
+	width: 100%;
+}
+
+div.progress {
+	width: inherit;
+	height: 10px;
+}
+
+progress {
+	width: inherit;
+	appearance: none; -webkit-appearance: none;
+	height: 7px;
+}
+
+progress[value]::-moz-progress-bar {background-color: var(--secondry-color); }
+progress[value]::-webkit-progress-bar {background-color: rgba(var(--primary-color), 0.9); }
+
+progress[value]::-moz-progress-value { background-color: rgba(var(--primary-color), 0.9); }
+progress[value]::-webkit-progress-value { background-color: var(--secondry-color); }
+
+/* || SCALE STYLES */
+
+article.timer {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+}
+
+div.scale {
+	grid-row: 2 / span 2;
+	grid-column: 2 / span 10;
+}
+
+div.progress {
+	grid-row: 3;
+	grid-column: 2 / span 10;
+}
+
+div.scale > img {
+	width: 100%;
+}
+
+/* || FOOTER STYLES */
+
+footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+div.music_info {
+	font-family: var(--main-font);
+	font-size: 22px;
+}
+
+span#singer {
+	color: rgba(var(--primary-color), 1);
+}
+
+span#music {
+	color: #B1B1B1;
+}
+
+audio { 
+  box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
+  border-radius: 90px;
+}
